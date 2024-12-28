@@ -10,6 +10,9 @@ from langchain.agents.format_scratchpad.openai_tools import (
 )
 from langchain_openai import ChatOpenAI
 from prompt import *
+from dotenv import load_dotenv
+
+load_dotenv()
 
 @tool
 def look_at_existing_app():
@@ -47,7 +50,7 @@ def generate_unit_tests(function_code):
     Generates the unit tests using OpenAI and `unittest` python library.
     """
     llm = ChatOpenAI(
-        model_name="gpt-4o",
+        model_name="ft:gpt-4o-mini-2024-07-18:trilogy-central-engineering::AjK62rDf",
         temperature=0,
     )
 
